@@ -1,0 +1,3 @@
+rootProject.name = 'kafka-streams-for-software-developers'
+include 'hello-world'
+
