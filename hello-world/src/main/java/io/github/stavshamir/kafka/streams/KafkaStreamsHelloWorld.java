@@ -8,7 +8,7 @@ import org.apache.kafka.streams.kstream.KStream;
 
 import java.util.Properties;
 
-public class Main {
+public class KafkaStreamsHelloWorld {
     private static final String INPUT_TOPIC = "names";
     private static final String OUTPUT_TOPIC = "greetings";
 
