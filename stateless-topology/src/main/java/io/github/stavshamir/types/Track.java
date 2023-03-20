@@ -25,7 +25,7 @@ public class Track {
         this.secondsListened = secondsListened;
     }
 
-    public void setInstrumental(boolean instrumental) {
+    public void setIsInstrumental(boolean instrumental) {
         isInstrumental = instrumental;
     }
 
