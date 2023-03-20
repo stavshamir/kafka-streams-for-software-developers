@@ -4,14 +4,29 @@ import java.util.UUID;
 
 public class Track {
 
-    private final UUID id;
-    private final int secondsListened;
-    private final boolean isInstrumental;
+    private UUID id;
+    private int secondsListened;
+    private boolean isInstrumental;
+
+    public Track() {
+    }
 
     public Track(UUID id, int secondsListened, boolean isInstrumental) {
         this.id = id;
         this.secondsListened = secondsListened;
         this.isInstrumental = isInstrumental;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public void setSecondsListened(int secondsListened) {
+        this.secondsListened = secondsListened;
+    }
+
+    public void setInstrumental(boolean instrumental) {
+        isInstrumental = instrumental;
     }
 
     public UUID getId() {
