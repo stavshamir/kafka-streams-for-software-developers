@@ -15,8 +15,8 @@ public class MusicToFeelingsApplication {
         Topology topology = FeelingsTopology.buildTopology();
 
         var streams = new KafkaStreams(topology, props);
-        Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
         streams.start();
+        Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
     }
 
     private static Properties buildConfiguration() {
@@ -24,7 +24,7 @@ public class MusicToFeelingsApplication {
         properties.put(StreamsConfig.APPLICATION_ID_CONFIG, "music-to-feelings");
         properties.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         properties.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
-        properties.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
+        properties.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.Void().getClass());
         return properties;
     }
 
