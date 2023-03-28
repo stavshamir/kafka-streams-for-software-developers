@@ -26,6 +26,8 @@ public class KafkaStreamsHelloWorld {
         var streams = new KafkaStreams(builder.build(), buildConfiguration());
         streams.start();
 
+        System.out.println("Application started");
+
         Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
     }
 
