@@ -8,4 +8,9 @@ public abstract class Feeling {
         return new Random().nextFloat();
     }
 
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + "{value=" + getValue() + "}";
+    }
+
 }
