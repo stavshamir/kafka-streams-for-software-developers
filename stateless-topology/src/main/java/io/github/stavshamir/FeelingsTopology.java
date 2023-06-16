@@ -24,8 +24,8 @@ public class FeelingsTopology {
                 .filter((key, track) -> track.getSecondsListened() > 30)
                 .peek((k, v) -> System.out.println("Filtered track: " + v))
                 .split(Named.as("branch-"))
-                .branch((key, track) -> track.isInstrumental(), Branched.as("instrumental"))
-                .branch((key, track) -> !track.isInstrumental(), Branched.as("not-instrumental"))
+                .branch((key, track) -> track.getIsInstrumental(), Branched.as("instrumental"))
+                .branch((key, track) -> !track.getIsInstrumental(), Branched.as("not-instrumental"))
                 .noDefaultBranch();
 
         KStream<Void, Feeling> instrumentalStream = branches.get("branch-instrumental")

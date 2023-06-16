@@ -37,7 +37,7 @@ public class Track {
         return secondsListened;
     }
 
-    public boolean isInstrumental() {
+    public boolean getIsInstrumental() {
         return isInstrumental;
     }
 
